@@ -1,0 +1,334 @@
+{
+  "error handler": {
+    "scope": "python",
+    "prefix": "expt",
+    "body": [
+      "try:",
+      "\t$CLIPBOARD",
+      "except Exception as e:",
+      "\tprint('\\x1b[6;37;41m ERROR!!\\x1b[0m\\x1b[7;30;41m')",
+      "\tprint(e)",
+      "\tprint('\\x1b[0m') ",
+      "\timport pdb; pdb.set_trace()## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+
+  // font-color black
+  "Print to console background red": {
+    "scope": "python",
+    "prefix": "ptrb",
+    "body": [
+      "print('\\x1b[1;30;41m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console background green": {
+    "scope": "python",
+    "prefix": "ptgeb",
+    "body": [
+      "print('\\x1b[1;30;42m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console background yellow": {
+    "scope": "python",
+    "prefix": "ptyb",
+    "body": [
+      "print('\\x1b[1;30;43m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console background purple": {
+    "scope": "python",
+    "prefix": "ptpb",
+    "body": [
+      "print('\\x1b[1;30;45m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console background cyan": {
+    "scope": "python",
+    "prefix": "ptcb",
+    "body": [
+      "print('\\x1b[1;30;46m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console background white": {
+    "scope": "python",
+    "prefix": "ptgb",
+    "body": [
+      "print('\\x1b[1;30;47m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  
+  // font-color white
+
+  "Print to console background red, font white": {
+    "scope": "python",
+    "prefix": "ptrw",
+    "body": [
+      "print('\\x1b[1;37;41m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console background green, font white": {
+    "scope": "python",
+    "prefix": "ptgwb",
+    "body": [
+      "print('\\x1b[1;37;42m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console background yellow, font white": {
+    "scope": "python",
+    "prefix": "ptyw",
+    "body": [
+      "print('\\x1b[1;37;43m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console background blue, font white": {
+    "scope": "python",
+    "prefix": "ptbw",
+    "body": [
+      "print('\\x1b[1;37;44m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console background purple, font white": {
+    "scope": "python",
+    "prefix": "ptpw",
+    "body": [
+      "print('\\x1b[1;37;45m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console background cyan, font white": {
+    "scope": "python",
+    "prefix": "ptcw",
+    "body": [
+      "print('\\x1b[1;37;46m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+
+  // No background
+  "Print to console red": {
+    "scope": "python",
+    "prefix": "ptr",
+    "body": [
+      "print('\\x1b[1;31;40m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console green": {
+    "scope": "python",
+    "prefix": "ptge",
+    "body": [
+      "print('\\x1b[1;32;40m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console yellow": {
+    "scope": "python",
+    "prefix": "pty",
+    "body": [
+      "print('\\x1b[1;33;40m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console blue": {
+    "scope": "python",
+    "prefix": "ptb",
+    "body": [
+      "print('\\x1b[1;34;40m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console purple": {
+    "scope": "python",
+    "prefix": "ptp",
+    "body": [
+      "print('\\x1b[1;35;40m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console cy": {
+    "scope": "python",
+    "prefix": "ptc",
+    "body": [
+      "print('\\x1b[1;36;40m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console gray": {
+    "scope": "python",
+    "prefix": "ptg",
+    "body": [
+      "print('\\x1b[1;37;40m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+
+
+// white background
+  "Print to console w-red": {
+    "scope": "python",
+    "prefix": "ptwr",
+    "body": [
+      "print('\\x1b[1;31;47m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console w-green": {
+    "scope": "python",
+    "prefix": "ptwg",
+    "body": [
+      "print('\\x1b[1;32;47m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console w-yellow": {
+    "scope": "python",
+    "prefix": "ptwy",
+    "body": [
+      "print('\\x1b[1;33;47m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console w-blue": {
+    "scope": "python",
+    "prefix": "ptwb",
+    "body": [
+      "print('\\x1b[1;34;47m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console w-purple": {
+    "scope": "python",
+    "prefix": "ptwp",
+    "body": [
+      "print('\\x1b[1;35;47m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console w-cy": {
+    "scope": "python",
+    "prefix": "ptwc",
+    "body": [
+      "print('\\x1b[1;36;47m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console w-gray": {
+    "scope": "python",
+    "prefix": "ptwg",
+    "body": [
+      "print('\\x1b[1;37;47m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+
+
+
+  "Print to console cyan-red": {
+    "scope": "python",
+    "prefix": "prt",
+    "body": [
+      "print('\\x1b[1;31;46m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console white-red": {
+    "scope": "python",
+    "prefix": "ptwr",
+    "body": [
+      "print('\\x1b[1;31;107m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console white-green": {
+    "scope": "python",
+    "prefix": "ptwg",
+    "body": [
+      "print('\\x1b[1;32;107m $TM_FILENAME:$TM_LINE_NUMBER - ${CLIPBOARD}'); ## DELETEME",
+      "print($CLIPBOARD) ## DELETEME",
+      "print('\\x1b[0m') ## DELETEME"
+    ],
+    "description": "Log output to console"
+  }
+}
+
+// def print_format_table():
+//     """
+//     prints table of formatted text format options
+//     """
+//     for style in range(8):
+//         for fg in range(30,38):
+//             s1 = ''
+//             for bg in range(40,48):
+//                 format = ';'.join([str(style), str(fg), str(bg)])
+//                 s1 += '\x1b[%sm %s \x1b[0m' % (format, format)
+//             print(s1)
+//         print('\n')
+
+// print_format_table()

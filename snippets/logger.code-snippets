@@ -1,0 +1,28 @@
+{
+  "Print the variable": {
+    "scope": "javascript,typescript,javascriptreact",
+    "prefix": "cng",
+    "body": [
+      "console.log(`%c $TM_FILENAME:$TM_LINE_NUMBER - $CLIPBOARD`, `font-weight: bold; background: #${('000000' + (Math.round(250-(50_000*((($TM_LINE_NUMBER+40.5)**(0.9))+6)**(-1.5))) * 0x10000 + (255-Math.round(250-(50_000*((($TM_LINE_NUMBER+40.5)**(0.9))+6)**(-1.5)))) * 0x100).toString(16)).slice(-6)}; color:#fff;`)// DELETEME",
+      "console.log($CLIPBOARD)// DELETEME"
+    ],
+    "description": "Log output to console"
+  },
+  "python debugger": {
+    "scope": "python",
+    "prefix": "pdb",
+    "body": ["import pdb; pdb.set_trace() # DELETEME"],
+    "description": "Log output to console"
+  },
+  "listen variable state": {
+    "scope": "javascript,typescript,javascriptreact",
+    "prefix": "efus",
+    "body": [
+      "useEffect(() => { // DELETEME",
+      "   console.log(`%c $TM_FILENAME:$TM_LINE_NUMBER - $CLIPBOARD`, `font-weight: bold; background: #${('000000' + (Math.round(250-(50_000*((($TM_LINE_NUMBER+40.5)**(0.9))+6)**(-1.5))) * 0x10000 + (255-Math.round(250-(50_000*((($TM_LINE_NUMBER+40.5)**(0.9))+6)**(-1.5)))) * 0x100).toString(16)).slice(-6)}; color:#fff;`) // DELETEME",
+      "   console.log($CLIPBOARD) // DELETEME",
+      "}, [$CLIPBOARD])// DELETEME"
+    ],
+    "description": "Log output to console"
+  }
+}
