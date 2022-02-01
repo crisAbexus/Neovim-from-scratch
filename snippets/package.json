@@ -1,5 +1,5 @@
 {
-  "name": "snippets",
+  "name": "friendly-snippets",
   "engines": {
     "vscode": "^1.11.0"
   },
@@ -7,16 +7,345 @@
     "snippets": [
       {
         "language": [
+          "plaintext",
+          "markdown",
+          "tex",
+          "html",
+          "global"
+        ],
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/global.json"
+      },
+      {
+        "language": "c",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/c.json"
+      },
+      {
+        "language": "cpp",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/cpp.json"
+      },
+      {
+        "language": [
+          "csharp",
+          "cs"
+        ],
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/csharp.json"
+      },
+      {
+        "language": [
+          "gitcommit",
+          "NeogitCommitMessage"
+        ],
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/gitcommit.json"
+      },
+      {
+        "language": "ejs",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/frameworks/ejs.json"
+      },
+      {
+        "language": "eruby",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/erb.json"
+      },
+      {
+        "language": "elixir",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/elixir.json"
+      },
+      {
+        "language": "eelixir",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/eelixir.json"
+      },
+      {
+        "language": "fortran",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/fortran.json"
+      },
+      {
+        "language": "glsl",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/glsl.json"
+      },
+      {
+        "language": "liquid",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/liquid.json"
+      },
+      {
+        "language": "lua",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/lua.json"
+      },
+      {
+        "language": "go",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/go.json"
+      },
+      {
+        "language": "fennel",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/fennel.json"
+      },
+      {
+        "language": "php",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/php.json"
+      },
+      {
+        "language": "rescript",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/rescript.json"
+      },
+      {
+        "language": "ruby",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/ruby.json"
+      },
+      {
+        "language": "rails",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/frameworks/rails.json"
+      },
+      {
+        "language": "rust",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/rust.json"
+      },
+      {
+        "language": "haskell",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/haskell.json"
+      },
+      {
+        "language": "scala",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/scala.json"
+      },
+      {
+        "language": "solidity",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/solidity.json"
+      },
+      {
+        "language": "swift",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/swift.json"
+      },
+      {
+        "language": "sql",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/sql.json"
+      },
+      {
+        "language": [
+          "shellscript",
+          "shell",
+          "sh",
+          "zsh"
+        ],
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/shell.json"
+      },
+      {
+        "language": [
+          "markdown",
+          "rmd"
+        ],
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/markdown.json"
+      },
+      {
+        "language": [
+          "plaintex",
+          "tex"
+        ],
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/latex.json"
+      },
+      {
+        "language": "plantuml",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/plantuml.json"
+      },
+      {
+        "language": "java",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/java.json"
+      },
+      {
+        "language": [
+          "html",
+          "jade",
+          "pug",
+          "eruby"
+        ],
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/html.json"
+      },
+      {
+        "language": [
+          "css",
+          "scss",
+          "sass",
+          "less",
+          "stylus"
+        ],
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/css.json"
+      },
+      {
+        "language": [
+          "javascript",
+          "javascriptreact"
+        ],
+        "path": "./snippets/javascript/javascript.json"
+      },
+      {
+        "language": [
           "javascript",
           "javascriptreact",
           "vue",
           "svelte"
         ],
-        "path": "./snippets/javascript/javascript.json"
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/javascript/javascript.json"
+      },
+      {
+        "language": [
+          "typescript",
+          "typescriptreact"
+        ],
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/javascript/typescript.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/javascript/react.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/javascript/react-native.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/javascript/react-ts.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/javascript/react-native-ts.json"
+      },
+      {
+        "language": "svelte",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/svelte.json"
+      },
+      {
+        "language": "vue",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/frameworks/vue/html.json"
+      },
+      {
+        "language": "vue",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/frameworks/vue/pug.json"
+      },
+      {
+        "language": "vue",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/frameworks/vue/javascript.json"
+      },
+      {
+        "language": "vue",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/frameworks/vue/vue.json"
+      },
+      {
+        "language": "python",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/python/base.json"
+      },
+      {
+        "language": "python",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/python/comprehension.json"
+      },
+      {
+        "language": "python",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/python/debug.json"
       },
       {
         "language": "python",
         "path": "./snippets/python/debug.json"
+      },
+      {
+        "language": "python",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/python/python.json"
+      },
+      {
+        "language": "python",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/python/unittest.json"
+      },
+      {
+        "language": "django",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/frameworks/django/imports.json"
+      },
+      {
+        "language": "django",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/frameworks/django/forms.json"
+      },
+      {
+        "language": "django",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/frameworks/django/models.json"
+      },
+      {
+        "language": "django",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/frameworks/django/views.json"
+      },
+      {
+        "language": "django",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/frameworks/django/filetemplates.json"
+      },
+      {
+        "language": "flutter",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/frameworks/flutter.json"
+      },
+      {
+        "language": "jekyll",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/frameworks/jekyll.json"
+      },
+      {
+        "language": "cobol",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/cobol/vscode_cobol.json"
+      },
+      {
+        "language": "cobol",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/cobol/vscode_cobol-compound.json"
+      },
+      {
+        "language": "cobol",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/cobol/vscode_cobol_dir.json"
+      },
+      {
+        "language": "cobol",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/cobol/vscode_cobol_jcl.json"
+      },
+      {
+        "language": "kotlin",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/kotlin.json"
+      },
+      {
+        "language": [
+          "plaintex",
+          "tex"
+        ],
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/latex/latex-snippets.json"
+      },
+      {
+        "language": [
+          "plaintex",
+          "tex"
+        ],
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/latex/vscode-latex-snippets.json"
+      },
+      {
+        "language": "twig",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/frameworks/twig.json"
+      },
+      {
+        "language": [
+          "r",
+          "rmd"
+        ],
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/r.json"
+      },
+      {
+        "language": "rmd",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/rmarkdown.json"
+      },
+      {
+        "language": "org",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/org.json"
+      },
+      {
+        "language": "norg",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/norg.json"
+      },
+      {
+        "language": "mint",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/mint.json"
+      },
+      {
+        "language": "gdscript",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/gdscript.json"
+      },
+      {
+        "language": "yaml",
+        "path": "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/kubernetes.json"
       }
     ]
   }
