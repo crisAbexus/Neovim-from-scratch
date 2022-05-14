@@ -12,3 +12,5 @@ require "user.gitsigns"
 require "user.nvim-tree"
 require "user.bufferline"
 require "user.lualine"
+require "user.indent"
+require("luasnip/loaders/from_vscode").load({paths = "~/.config/nvim/snippets/"})
