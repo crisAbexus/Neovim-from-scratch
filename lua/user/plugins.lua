@@ -92,6 +92,14 @@ return packer.startup(function(use)
     },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
+  -- Lua
+  use {
+    "narutoxy/dim.lua",
+    requires = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" },
+    config = function()
+      require('dim').setup({})
+    end
+  }
   use "lukas-reineke/indent-blankline.nvim"
   use {
   "ur4ltz/surround.nvim",
