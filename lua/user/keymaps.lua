@@ -79,3 +79,8 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- buffers
 -- Close buffer
 keymap("n", "<leader>q",":Bdelete<CR>",opts)
+
+-- Close pane
+keymap("n", "<leader>x",":clo<CR>",opts)
+keymap("n", "<leader>|","<C-w>v",opts)
+keymap("n", "<leader>-","<C-w>s",opts)
