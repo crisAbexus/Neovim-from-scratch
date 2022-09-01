@@ -6,9 +6,9 @@ local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+keymap("", "¿", "<Nop>", opts)
+vim.g.mapleader = "¿"
+vim.g.maplocalleader = "¿"
 
 -- Modes
 --   normal_mode = "n",
@@ -24,6 +24,8 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+
+keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -67,3 +69,21 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+<<<<<<< HEAD:lua/user/keymaps.lua
+=======
+-- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<c-g>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<c-f>", "<cmd>Telescope live_grep<cr>", opts)
+
+-- Nvimtree
+keymap("n", "<leader>e", ":Neotree toggle<cr>", opts)
+
+-- buffers
+-- Close buffer
+keymap("n", "<leader>q",":Bdelete<CR>",opts)
+
+-- Close pane
+keymap("n", "<leader>x",":clo<CR>",opts)
+keymap("n", "<leader>|","<C-w>v",opts)
+keymap("n", "<leader>-","<C-w>s",opts)
+>>>>>>> manjaro-changes:neovim/.config/nvim/lua/user/keymaps.lua
