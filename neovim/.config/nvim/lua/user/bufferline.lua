@@ -92,21 +92,12 @@ bufferline.setup {
     },
 
     close_button = {
-<<<<<<< HEAD:lua/user/bufferline.lua
-      guifg = { attribute = "fg", highlight = "TabLine" },
-      guibg = { attribute = "bg", highlight = "TabLine" },
-    },
-    close_button_visible = {
-      guifg = { attribute = "fg", highlight = "TabLine" },
-      guibg = { attribute = "bg", highlight = "TabLine" },
-=======
       fg = { attribute = "fg", highlight = "TabLine" },
       bg = { attribute = "bg", highlight = "TabLine" },
     },
     close_button_visible = {
       fg = { attribute = "fg", highlight = "TabLine" },
       bg = { attribute = "bg", highlight = "TabLine" },
->>>>>>> manjaro-changes:neovim/.config/nvim/lua/user/bufferline.lua
     },
     -- close_button_selected = {
     --   fg = {attribute='fg',highlight='TabLineSel'},

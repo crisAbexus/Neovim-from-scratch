@@ -69,8 +69,6 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
-<<<<<<< HEAD:lua/user/keymaps.lua
-=======
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<c-g>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<c-f>", "<cmd>Telescope live_grep<cr>", opts)
@@ -86,4 +84,3 @@ keymap("n", "<leader>q",":Bdelete<CR>",opts)
 keymap("n", "<leader>x",":clo<CR>",opts)
 keymap("n", "<leader>|","<C-w>v",opts)
 keymap("n", "<leader>-","<C-w>s",opts)
->>>>>>> manjaro-changes:neovim/.config/nvim/lua/user/keymaps.lua

@@ -19,11 +19,7 @@ local diagnostics = {
 
 local diff = {
 	"diff",
-<<<<<<< HEAD:lua/user/lualine.lua
-	colored = false,
-=======
 	colored = true,
->>>>>>> manjaro-changes:neovim/.config/nvim/lua/user/lualine.lua
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
   cond = hide_in_width
 }
@@ -69,17 +65,10 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-<<<<<<< HEAD:lua/user/lualine.lua
-		theme = "auto",
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
-		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
-=======
 		theme = "horizon",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
->>>>>>> manjaro-changes:neovim/.config/nvim/lua/user/lualine.lua
 		always_divide_middle = true,
 	},
 	sections = {
