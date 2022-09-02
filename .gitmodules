@@ -1,0 +1,12 @@
+[submodule "tmux-battery"]
+	path = tmux/tmux-battery
+	url = https://github.com/tmux-plugins/tmux-battery.git
+[submodule "tmux-yank"]
+	path = tmux/tmux-yank
+	url = https://github.com/tmux-plugins/tmux-yank.git
+[submodule "tmux-mem-cpu-load"]
+	path = tmux/tmux-mem-cpu-load
+	url = https://github.com/thewtex/tmux-mem-cpu-load.git
+[submodule "tpm"]
+	path = tmux/tpm
+	url = https://github.com/tmux-plugins/tpm.git
