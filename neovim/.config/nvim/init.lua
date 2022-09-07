@@ -9,7 +9,7 @@ require "cristian0.treesitter"
 require "cristian0.autopairs"
 require "cristian0.comment"
 require "cristian0.gitsigns"
---[[ require "cristian0.nvim-tree" ]]
+require "cristian0.nvim-tree"
 require "cristian0.bufferline"
 require "cristian0.lualine"
 require "cristian0.indent"
