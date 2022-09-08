@@ -14,4 +14,5 @@ require "cristian0.bufferline"
 require "cristian0.lualine"
 require "cristian0.surround"
 require "cristian0.indent"
-require("luasnip/loaders/from_vscode").load({paths = "~/.config/nvim/snippets/"})
+require("luasnip/loaders/from_vscode").load({ paths = "~/.config/nvim/snippets/" })
+require 'lspconfig'.pyright.setup()
