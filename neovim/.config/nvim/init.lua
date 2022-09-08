@@ -3,7 +3,7 @@ require "cristian0.keymaps"
 require "cristian0.plugins"
 require "cristian0.colorscheme"
 require "cristian0.cmp"
-require "cristian0.lsp"
+--[[ require "cristian0.lsp" ]]
 require "cristian0.telescope"
 require "cristian0.treesitter"
 require "cristian0.autopairs"

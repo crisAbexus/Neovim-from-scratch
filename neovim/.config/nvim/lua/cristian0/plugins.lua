@@ -39,7 +39,7 @@ return packer.startup(function(use)
   use "p00f/nvim-ts-rainbow" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
-  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+  use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
   use "moll/vim-bbye"
   use 'nvim-lualine/lualine.nvim'
 
@@ -80,8 +80,8 @@ return packer.startup(function(use)
 
   -- install without yarn or npm
   use({
-      "iamcco/markdown-preview.nvim",
-      run = function() vim.fn["mkdp#util#install"]() end,
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
   })
 
   --[[ use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }) ]]
@@ -95,18 +95,18 @@ return packer.startup(function(use)
   }
   -- Lua
   --use {
-   -- "narutoxy/dim.lua",
-   -- requires = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" },
-    --config = function()
-     -- require('dim').setup({})
-    --end
+  -- "narutoxy/dim.lua",
+  -- requires = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" },
+  --config = function()
+  -- require('dim').setup({})
+  --end
   --}
   use "lukas-reineke/indent-blankline.nvim"
-  use "ur4ltz/surround.nvim" 
+  use "ur4ltz/surround.nvim"
   use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
-    requires = { 
+    requires = {
       "nvim-lua/plenary.nvim",
       "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
@@ -115,7 +115,7 @@ return packer.startup(function(use)
         's1n7ax/nvim-window-picker',
         tag = "v1.*",
         config = function()
-          require'window-picker'.setup({
+          require 'window-picker'.setup({
             autoselect_one = true,
             include_current = false,
             filter_rules = {
@@ -133,19 +133,19 @@ return packer.startup(function(use)
         end,
       }
     },
-    config = function ()
+    config = function()
       -- Unless you are still migrating, remove the deprecated commands from v1.x
       vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
       -- If you want icons for diagnostic errors, you'll need to define them somewhere:
       vim.fn.sign_define("DiagnosticSignError",
-        {text = " ", texthl = "DiagnosticSignError"})
+        { text = " ", texthl = "DiagnosticSignError" })
       vim.fn.sign_define("DiagnosticSignWarn",
-        {text = " ", texthl = "DiagnosticSignWarn"})
+        { text = " ", texthl = "DiagnosticSignWarn" })
       vim.fn.sign_define("DiagnosticSignInfo",
-        {text = " ", texthl = "DiagnosticSignInfo"})
+        { text = " ", texthl = "DiagnosticSignInfo" })
       vim.fn.sign_define("DiagnosticSignHint",
-        {text = "", texthl = "DiagnosticSignHint"})
+        { text = "", texthl = "DiagnosticSignHint" })
       -- NOTE: this is changed from v1.x, which used the old style of highlight groups
       -- in the form "LspDiagnosticsSignWarning"
 
@@ -155,7 +155,7 @@ return packer.startup(function(use)
         enable_git_status = true,
         enable_diagnostics = true,
         sort_case_insensitive = false, -- used when sorting files and directories in the tree
-        sort_function = nil , -- use a custom function for sorting files and directories in the tree 
+        sort_function = nil, -- use a custom function for sorting files and directories in the tree
         -- sort_function = function (a,b)
         --       if a.type == b.type then
         --           return a.path > b.path
@@ -204,8 +204,8 @@ return packer.startup(function(use)
               -- Change type
               added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
               modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
-              deleted   = "✖",-- this can only be used in the git_status source
-              renamed   = "",-- this can only be used in the git_status source
+              deleted   = "✖", -- this can only be used in the git_status source
+              renamed   = "", -- this can only be used in the git_status source
               -- Status type
               untracked = "",
               ignored   = "",
@@ -223,9 +223,9 @@ return packer.startup(function(use)
             nowait = true,
           },
           mappings = {
-            ["<space>"] = { 
-                "toggle_node", 
-                nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use 
+            ["<space>"] = {
+              "toggle_node",
+              nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
             },
             ["<2-LeftMouse>"] = "open",
             ["<cr>"] = "open",
@@ -239,7 +239,7 @@ return packer.startup(function(use)
             ["C"] = "close_node",
             ["z"] = "close_all_nodes",
             --["Z"] = "expand_all_nodes",
-            ["a"] = { 
+            ["a"] = {
               "add",
               -- some commands may take optional config options, see `:h neo-tree-mappings` for details
               config = {
@@ -290,15 +290,15 @@ return packer.startup(function(use)
             },
           },
           follow_current_file = false, -- This will find and focus the file in the active buffer every
-                                       -- time the current file is changed while the tree is open.
+          -- time the current file is changed while the tree is open.
           group_empty_dirs = false, -- when true, empty folders will be grouped together
           hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
-                                                  -- in whatever position is specified in window.position
-                                -- "open_current",  -- netrw disabled, opening a directory opens within the
-                                                  -- window like netrw would, regardless of window.position
-                                -- "disabled",    -- netrw left alone, neo-tree does not handle opening dirs
+          -- in whatever position is specified in window.position
+          -- "open_current",  -- netrw disabled, opening a directory opens within the
+          -- window like netrw would, regardless of window.position
+          -- "disabled",    -- netrw left alone, neo-tree does not handle opening dirs
           use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
-                                          -- instead of relying on nvim autocmd events.
+          -- instead of relying on nvim autocmd events.
           window = {
             mappings = {
               ["<bs>"] = "navigate_up",
@@ -315,7 +315,7 @@ return packer.startup(function(use)
         },
         buffers = {
           follow_current_file = true, -- This will find and focus the file in the active buffer every
-                                       -- time the current file is changed while the tree is open.
+          -- time the current file is changed while the tree is open.
           group_empty_dirs = true, -- when true, empty folders will be grouped together
           show_unloaded = true,
           window = {
@@ -347,7 +347,7 @@ return packer.startup(function(use)
   }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
+  -- if PACKER_BOOTSTRAP then
+  --  require("packer").sync()
+  --  end
 end)
