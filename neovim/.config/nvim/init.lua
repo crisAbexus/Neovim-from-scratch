@@ -16,3 +16,6 @@ require "cristian0.neo_tree"
 require "cristian0.indent"
 require "cristian0.window-picker"
 require("luasnip/loaders/from_vscode").load({ paths = "~/.config/nvim/snippets/" })
+vim.o.background = "dark" -- or "light" for light mode
+
+-- Load and setup function to choose plugin and language highlights

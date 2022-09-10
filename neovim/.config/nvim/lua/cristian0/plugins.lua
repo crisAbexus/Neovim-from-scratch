@@ -30,9 +30,10 @@ packer.init {
 }
 
 -- Install your plugins here
-return packer.startup(function(use)
+return packer.startup(function()
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
+  use { "adisen99/codeschool.nvim", requires = { "rktjmp/lush.nvim" } }
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
@@ -43,9 +44,10 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
   use 'nvim-lualine/lualine.nvim'
 
+  use "rktjmp/lush.nvim"
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
+  use { "ellisonleao/gruvbox.nvim" }
+  use { "adisen99/codeschool.nvim", requires = { "rktjmp/lush.nvim" } }
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -56,7 +58,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
 
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
+  --[[ use "L3MON4D3/LuaSnip" --snippet engine ]]
+  use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" })
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
@@ -88,7 +91,7 @@ return packer.startup(function(use)
   -- install without yarn or npm
   use({
     "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
+    run = function() fn["mkdp#util#install"]() end,
   })
 
   --[[ use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }) ]]
