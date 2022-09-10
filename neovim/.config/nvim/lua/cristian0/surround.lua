@@ -1,7 +1,7 @@
-local status_ok, surround = pcall(require, "surround")
+local status_ok, surround = pcall(require, "nvim-surround")
 if not status_ok then
-	return
+  return
 end
-  surround.config = function()
-    require"surround".setup {mappings_style = "surround"}
-  end
+surround.config = function()
+  require "surround".setup()
+end
