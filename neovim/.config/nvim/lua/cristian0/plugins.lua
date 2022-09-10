@@ -102,7 +102,6 @@ return packer.startup(function(use)
   --end
   --}
   use "lukas-reineke/indent-blankline.nvim"
-  use "ur4ltz/surround.nvim"
   use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
