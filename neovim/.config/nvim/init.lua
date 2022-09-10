@@ -12,6 +12,7 @@ require "cristian0.gitsigns"
 require "cristian0.nvim-tree"
 require "cristian0.bufferline"
 require "cristian0.lualine"
-require "cristian0.surround"
+require "cristian0.neo_tree"
 require "cristian0.indent"
+require "cristian0.window-picker"
 require("luasnip/loaders/from_vscode").load({ paths = "~/.config/nvim/snippets/" })
