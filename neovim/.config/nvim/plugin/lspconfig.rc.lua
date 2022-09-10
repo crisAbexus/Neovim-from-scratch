@@ -19,7 +19,7 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local opts = { noremap = true, silent = true }
+  local opts = { noremap = true, silent = false }
   vim.keymap.set('n', '¿<space>', vim.diagnostic.open_float, opts)
   vim.keymap.set('n', '¿k', vim.diagnostic.goto_prev, opts)
   vim.keymap.set('n', '¿j', vim.diagnostic.goto_next, opts)
@@ -41,6 +41,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', '¿rr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+  vim.keymap.set('n', '¿fix', vim.lsp.buf.code_action, bufopts)
 end
 
 nvim_lsp.sumneko_lua.setup {
