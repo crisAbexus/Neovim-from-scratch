@@ -204,7 +204,7 @@ local myFirstSnippet = s("myFirstSnippet", {
 })
 local mySecondSnippet = s("mySecondSnippet", fmt(
   [[ local {} = function({}) {{{}}} end ]],
-  { i(1, "func_name"), i(2, "args"), i(3, "body function") })
+  { i(1, "func_name"), c(2, { t(""), t("myArg") }), i(3, "body function") })
 )
 table.insert(snippets, myFirstSnippet);
 table.insert(snippets, mySecondSnippet);
