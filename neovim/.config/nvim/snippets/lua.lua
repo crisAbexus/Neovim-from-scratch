@@ -197,7 +197,7 @@ local {} = {}
 ) --}}}
 
 -- Tutorial Snippets go here --
-local myFirstAutoSnippet = s("auto-", { t("this was auto triggered") });
+local myFirstAutoSnippet = s({ trig = "digit%d", regTrig = true }, { t("this was auto triggered") });
 table.insert(autosnippets, myFirstAutoSnippet);
 
 -- End Refactoring --
