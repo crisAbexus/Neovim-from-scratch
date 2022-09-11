@@ -203,7 +203,7 @@ local myFirstSnippet = s("myFirstSnippet", {
   t({ "", "this is another textnode" }),
 })
 local mySecondSnippet = s("mySecondSnippet", fmt(
-  [[ local {} = function({}) {} end ]],
+  [[ local {} = function({}) {{{}}} end ]],
   { i(1, "func_name"), i(2, "args"), i(3, "body function") })
 )
 table.insert(snippets, myFirstSnippet);
