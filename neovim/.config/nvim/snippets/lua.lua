@@ -156,10 +156,7 @@ c({}, {{ {} }}),
 -- Tutorial Snippets go here --
 local myFirstAutoSnippet = s({ trig = "auto", regTrig = true }, {
   i(1, "uppercase me "),
-  f(function(arg, snip)
-    return arg[1][1]:upper() .. " " .. arg[2][1]:lower()
-  end, { 1, 2 }),
-  i(2, "LOWERCASE ME "),
+  rep(1),
 });
 
 table.insert(autosnippets, myFirstAutoSnippet); -- End Refactoring --
