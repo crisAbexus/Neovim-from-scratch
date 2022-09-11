@@ -154,11 +154,12 @@ c({}, {{ {} }}),
 ) --}}}
 
 -- Tutorial Snippets go here --
-local myFirstAutoSnippet = s({ trig = "digit(%d%d%d)", regTrig = true }, {
+local myFirstAutoSnippet = s({ trig = "digit(%d)(%d%d)", regTrig = true }, {
   f(function(_, snip)
-    return snip.captures[1]
+    return snip.captures[2]
   end)
 });
+
 table.insert(autosnippets, myFirstAutoSnippet);
 
 -- End Refactoring --
