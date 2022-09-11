@@ -154,9 +154,9 @@ c({}, {{ {} }}),
 ) --}}}
 
 -- Tutorial Snippets go here --
-local myFirstAutoSnippet = s({ trig = "digit%d", regTrig = true }, {
-  f(function()
-
+local myFirstAutoSnippet = s({ trig = "digit(%d%d%d)", regTrig = true }, {
+  f(function(_, snip)
+    return snip.captures[1]
   end)
 });
 table.insert(autosnippets, myFirstAutoSnippet);
