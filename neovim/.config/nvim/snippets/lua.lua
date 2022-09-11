@@ -155,9 +155,10 @@ c({}, {{ {} }}),
 
 -- Tutorial Snippets go here --
 local myFirstAutoSnippet = s({ trig = "digit(%d)(%d%d)", regTrig = true }, {
-  f(function(_, snip)
-    return snip.captures[2]
-  end)
+  i(1, "pattern "),
+  f(function(arg, snip)
+    return arg[1][1]
+  end, 1)
 });
 
 table.insert(autosnippets, myFirstAutoSnippet);
