@@ -154,11 +154,17 @@ c({}, {{ {} }}),
 ) --}}}
 
 -- Tutorial Snippets go here --
-local myFirstAutoSnippet = s({ trig = "auto", regTrig = true }, {
-  i(1, "uppercase me "),
-  rep(1),
+local myFirstAutoSnippet = s({ trig = "digit(%d)(%d%d)", regTrig = true }, {
+  i(1, "--the name of this file is: "),
+  f(function(_, snip)
+    return snip.env.TM_FILENAME .. snip.captures[1]
+  end, 1)
 });
+--let's try this onelua.lua1
+--the name of this file is: lua.lua1
 
-table.insert(autosnippets, myFirstAutoSnippet); -- End Refactoring --
+table.insert(autosnippets, myFirstAutoSnippet);
+
+-- End Refactoring --
 
 return snippets, autosnippets
