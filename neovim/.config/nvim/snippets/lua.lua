@@ -197,17 +197,8 @@ local {} = {}
 ) --}}}
 
 -- Tutorial Snippets go here --
-local myFirstSnippet = s("myFirstSnippet", {
-  t("Hello, world!!, this is my first self made snippet in luasnip "),
-  i(1, "placeholder1"),
-  t({ "", "this is another textnode" }),
-})
-local mySecondSnippet = s("mySecondSnippet", fmt(
-  [[ local {} = function({}) {{{}}} end ]],
-  { i(1, "func_name"), c(2, { t(""), i(1, "args") }), i(3, "body function") })
-)
-table.insert(snippets, myFirstSnippet);
-table.insert(snippets, mySecondSnippet);
+local myFirstAutoSnippet = s("auto-", { t("this was auto triggered") });
+table.insert(autosnippets, myFirstAutoSnippet);
 
 -- End Refactoring --
 
