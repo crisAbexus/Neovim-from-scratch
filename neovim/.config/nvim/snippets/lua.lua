@@ -202,7 +202,12 @@ local myFirstSnippet = s("myFirstSnippet", {
   i(1, "placeholder1"),
   t({ "", "this is another textnode" }),
 })
+local mySecondSnippet = s("mySecondSnippet", fmt(
+  [[ local {} = function({}) {} end ]],
+  { i(1, "func_name"), i(2, "args"), i(3, "body function") })
+)
 table.insert(snippets, myFirstSnippet);
+table.insert(snippets, mySecondSnippet);
 
 -- End Refactoring --
 
