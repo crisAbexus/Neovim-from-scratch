@@ -136,7 +136,7 @@ cs("{}", fmt( -- {}
       }),
     }
   ),
-  { pattern = "*/snippets/*.lua", "jcs" }
+  { pattern = "*/snippets/*.lua", "ñcs" }
 ) --}}}
 
 cs(-- choice_node_snippet luaSnip choice node{{{
@@ -150,54 +150,15 @@ c({}, {{ {} }}),
       i(2, ""),
     }
   ),
-  { pattern = "*/snippets/*.lua", "jcn" }
-) --}}}
-
-cs(-- [function] Lua function snippet{{{
-  "function",
-  fmt(
-    [[ 
-function {}({})
-  {}
-end
-]]   ,
-    {
-      i(1, ""),
-      i(2, ""),
-      i(3, ""),
-    }
-  ),
-  "jff"
-) --}}}
-cs(-- [local_function] Lua function snippet{{{
-  "local_function",
-  fmt(
-    [[ 
-local function {}({})
-  {}
-end
-]]   ,
-    {
-      i(1, ""),
-      i(2, ""),
-      i(3, ""),
-    }
-  ),
-  "jlf"
-) --}}}
-cs(-- [local] Lua local variable snippet{{{
-  "local",
-  fmt(
-    [[ 
-local {} = {}
-  ]] ,
-    { i(1, ""), i(2, "") }
-  ),
-  "jj"
+  { pattern = "*/snippets/*.lua", "ñcn" }
 ) --}}}
 
 -- Tutorial Snippets go here --
-local myFirstAutoSnippet = s({ trig = "digit%d", regTrig = true }, { t("this was auto triggered") });
+local myFirstAutoSnippet = s({ trig = "digit%d", regTrig = true }, {
+  f(function()
+
+  end)
+});
 table.insert(autosnippets, myFirstAutoSnippet);
 
 -- End Refactoring --
