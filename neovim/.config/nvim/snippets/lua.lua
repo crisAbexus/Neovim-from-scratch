@@ -197,7 +197,11 @@ local {} = {}
 ) --}}}
 
 -- Tutorial Snippets go here --
-local myFirstSnippet = s("myFirstSnippet", { t("Hello, world!!") })
+local myFirstSnippet = s("myFirstSnippet", {
+  t("Hello, world!!, this is my first self made snippet in luasnip "),
+  i(1, "placeholder1"),
+  t({ "", "this is another textnode" }),
+})
 table.insert(snippets, myFirstSnippet);
 
 -- End Refactoring --
