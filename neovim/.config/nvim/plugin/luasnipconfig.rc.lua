@@ -49,12 +49,12 @@ end, { silent = true })
 
 vim.keymap.set({ "i", "s" }, "<A-y>", "<Esc>o", { silent = true })
 
-vim.keymap.set({ "i", "s" }, "<a-k>", function()
+vim.keymap.set({ "i", "s" }, "<a-j>", function()
   if ls.jumpable(1) then
     ls.jump(1)
   end
 end, { silent = true })
-vim.keymap.set({ "i", "s" }, "<a-j>", function()
+vim.keymap.set({ "i", "s" }, "<a-k>", function()
   if ls.jumpable(-1) then
     ls.jump(-1)
   end
@@ -80,4 +80,3 @@ end) --}}}
 
 vim.keymap.set("n", "<Leader><CR>", "<cmd>LuaSnipEdit<cr>", { silent = true, noremap = true })
 vim.cmd([[autocmd BufEnter */snippets/*.lua nnoremap <silent> <buffer> <CR> /-- End Refactoring --<CR>O<Esc>O]])
-
