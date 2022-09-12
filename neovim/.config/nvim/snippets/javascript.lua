@@ -293,7 +293,7 @@ console.log(`%c {} = 0; {} < {}; {}++) {{
           "🇻🇬", "🇻🇮", "🇻🇳", "🇻🇺", "🇼🇫", "🇼🇸", "🇽🇰", "🇾🇪", "🇾🇹",
           "🇿🇦", "🇿🇲", "🇿🇼", }
         local v = snip.env
-        local ms = emojis[math.random(#emojis)] ..
+        local ms = emojis[math.random(#emojis)] .. "  " ..
             v.TM_FILENAME .. ":" .. v.TM_LINE_NUMBER .. " " .. snip.captures[1] .. ":"
         return sn(1, i(1, ms))
       end),
