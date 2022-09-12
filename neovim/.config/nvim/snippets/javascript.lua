@@ -1,9 +1,4 @@
 local ls = require("luasnip") --{{{
-local status_ok, emojis = pcall(require, "snippets/emojis")
-if not status_ok then
-  print(emojis)
-  return
-end
 local s = ls.s
 local i = ls.i
 local t = ls.t
