@@ -14,6 +14,7 @@ require "cristian0.lualine"
 require "cristian0.neo_tree"
 require "cristian0.indent"
 require "cristian0.window-picker"
+--[[ print(emojis) ]]
 vim.o.background = "dark" -- or "light" for light mode
 
 -- Load and setup function to choose plugin and language highlights
