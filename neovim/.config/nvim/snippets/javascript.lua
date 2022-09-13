@@ -189,25 +189,23 @@ while ({}) {{
 cs(-- for([%w_]+) JS For Loop snippet{{{
   { trig = "cng ([%w_]+) ", regTrig = true },
   fmt(
-    [[
-console.log(`%c {} = 0; {} < {}; {}++) {{
+    [[{}
   {}
-}}
-{}
     ]],
     {
       d(1, function(_, snip)
         local v = snip.env
-        print(vim.g.emojis)
-        local ms = emojis[math.random(#emojis)] .. "  " ..
-            v.TM_FILENAME .. ":" .. v.TM_LINE_NUMBER .. " " .. snip.captures[1] .. ":"
-        return sn(1, i(1, ms))
+        local ms = "console.log(`" .. emojis[math.random(#emojis)] .. "  " ..
+            v.TM_FILENAME .. ":" .. v.TM_LINE_NUMBER .. " " .. snip.captures[1] .. ": `);"
+        --[[ local sl = "console.log(" .. snip.captures[1] .. ");" ]]
+
+        return sn(1, t(ms))
       end),
-      rep(1),
-      c(2, { i(1, "num"), sn(1, { i(1, "arr"), t(".length") }) }),
-      rep(1),
-      i(3, "// TODO:"),
-      i(4),
+      d(2, function(_, snip)
+        local sl = "console.log(" .. snip.captures[1] .. ");"
+
+        return sn(1, t(sl))
+      end),
     }
   )
 )
