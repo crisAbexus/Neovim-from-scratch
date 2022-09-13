@@ -125,3 +125,7 @@ vim.keymap.set({ "i", "s" }, "<c-h>", function()
 end)
 keymap("i", "<C-a>", "<home>", opts);
 keymap("i", "<C-e>", "<end>", opts);
+
+--[[ keymap("c", "<C-a>", "<C-home>", opts); ]]
+keymap("c", "<C-j>", "<C-n>", opts);
+keymap("c", "<C-k>", "<C-p>", opts);
