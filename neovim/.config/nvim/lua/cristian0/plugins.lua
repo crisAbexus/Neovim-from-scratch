@@ -36,6 +36,7 @@ return packer.startup(function()
   -- Colorschemes
   use { "ellisonleao/gruvbox.nvim" }
   use { "rockyzhang24/arctic.nvim", requires = { "rktjmp/lush.nvim" } }
+  use 'folke/tokyonight.nvim'
 
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
