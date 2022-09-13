@@ -33,7 +33,10 @@ packer.init {
 return packer.startup(function()
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use { "adisen99/codeschool.nvim", requires = { "rktjmp/lush.nvim" } }
+  -- Colorschemes
+  use { "ellisonleao/gruvbox.nvim" }
+  use { "rockyzhang24/arctic.nvim", requires = { "rktjmp/lush.nvim" } }
+
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
@@ -45,9 +48,6 @@ return packer.startup(function()
   use 'nvim-lualine/lualine.nvim'
 
   use "rktjmp/lush.nvim"
-  -- Colorschemes
-  use { "ellisonleao/gruvbox.nvim" }
-  use { "adisen99/codeschool.nvim", requires = { "rktjmp/lush.nvim" } }
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
