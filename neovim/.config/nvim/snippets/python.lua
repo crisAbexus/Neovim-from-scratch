@@ -85,7 +85,7 @@ cs(-- for([%w_]+) JS For Loop snippet{{{
     {
       d(1, function(_, snip)
         local v = snip.env
-        local ms = 'print("' .. emojis[math.random(#emojis)] .. '  \x1b[1;30;40m' ..
+        local ms = 'print("' .. emojis[math.random(#emojis)] .. '  \\x1b[1;32;40m' ..
             v.TM_FILENAME .. ':' .. v.TM_LINE_NUMBER .. '\t' .. snip.captures[1] .. ':")'
         return sn(1, t(ms))
       end),
