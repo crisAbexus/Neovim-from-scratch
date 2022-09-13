@@ -78,20 +78,21 @@ cs('pdb', fmt(-- prints in yellow font and black background
 cs(-- for([%w_]+) JS For Loop snippet{{{
   { trig = 'ptrb ([%w_]+) ', regTrig = true },
   fmt([[
-  {}
-  {}
+  print("{1} {2}:")
+  print({3})
   print('\x1b[0m')
   ]],
     {
-      d(1, function(_, snip)
-        local v = snip.env
-        local ms = 'print("' .. emojis[math.random(#emojis)] .. '  \\x1b[1;32;40m' ..
-            v.TM_FILENAME .. ':' .. v.TM_LINE_NUMBER .. '\t' .. snip.captures[1] .. ':")'
-        return sn(1, t(ms))
+      d(1, function()
+        return sn(1, t(emojis[math.random(#emojis)]))
       end),
       d(2, function(_, snip)
-        local sl = 'print(' .. snip.captures[1] .. ')'
-        return sn(1, t(sl))
+        local v = snip.env
+        local ms = '  \\x1b[1;32;40m' .. v.TM_FILENAME .. ':' .. v.TM_LINE_NUMBER .. '\t' .. snip.captures[1]
+        return sn(1, t(ms))
+      end),
+      d(3, function(_, snip)
+        return sn(1, t(snip.captures[1]))
       end),
     }
   )
