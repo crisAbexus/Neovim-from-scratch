@@ -186,25 +186,42 @@ while ({}) {{
 
 --console.log(`%c $TM_FILENAME:$TM_LINE_NUMBER - $CLIPBOARD`, 'font-weight: bold; background: #'+('000000' + (Math.round(250-(50_000*((($TM_LINE_NUMBER+40.5)**(0.9))+6)**(-1.5))) * 0x10000 + (255-Math.round(250-(50_000*((($TM_LINE_NUMBER+40.5)**(0.9))+6)**(-1.5)))) * 0x100).toString(16)).slice(-6)+'; color:#fff;')// DELETEME\n
 
-cs(-- for([%w_]+) JS For Loop snippet{{{
+cs(-- for([%w_]+) emoji.log{{{
   { trig = "cng", regTrig = false },
   fmt(
-    [[{1}
-  {2}
+    [[
+    {1}
+    {2}
     ]],
     {
       d(1, function(_, snip)
         local v = snip.env
         local my_clipboard = vim.fn.getreg('"', 1, true)[1]
+        my_clipboard:gsub('%$', '')
+        if string.match(my_clipboard, "'") then
+          my_clipboard = my_clipboard:gsub("%'", '')
+        end
+        if string.match(my_clipboard, '"') then
+          my_clipboard = my_clipboard:gsub('%"', '')
+        end
+        if string.match(my_clipboard, '`') then
+          my_clipboard = my_clipboard:gsub('%`', '')
+        end
         local ms = "console.log(`" .. emojis[math.random(#emojis)] .. "  " ..
-            v.TM_FILENAME .. ":" .. v.TM_LINE_NUMBER .. " " .. my_clipboard .. ": `);"
+            v.TM_FILENAME .. ":" .. v.TM_LINE_NUMBER .. " " .. my_clipboard .. ": `"
+            .. ", 'font-weight: bold; background:"
+            .. " #'+('000000' +"
+            .. " (Math.round(250-(50_000*((($TM_LINE_NUMBER+40.5)**(0.9))+6)**(-1.5))) * 0x10000 "
+            .. "+ (255-Math.round(250-(50_000*((($TM_LINE_NUMBER+40.5)**(0.9))+6)**(-1.5)))) * 0x100)"
+            .. ".toString(16)).slice(-6)+'; color:#fff;'"
+            .. "); //DELETEME"
         --[[ local sl = "console.log(" .. snip.captures[1] .. ");" ]]
 
         return sn(1, t(ms))
       end),
-      d(2, function(_, snip)
+      d(2, function()
         local my_clipboard = vim.fn.getreg('"', 1, true)[1]
-        local sl = "console.log(" .. my_clipboard .. ");"
+        local sl = "console.log(" .. my_clipboard .. "); // DELETEME"
         return sn(1, t(sl))
       end),
     }
