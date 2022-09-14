@@ -1,15 +1,11 @@
 local ls = require("luasnip");
 local s = ls.s
-local i = ls.i
 local t = ls.t
 
 local d = ls.dynamic_node
-local c = ls.choice_node
-local f = ls.function_node
 local sn = ls.snippet_node
 
 local fmt = require('luasnip.extras.fmt').fmt
-local rep = require('luasnip.extras').rep
 
 local snippets, autosnippets = {}, {} --}}}
 
@@ -74,38 +70,16 @@ cs('pdb', fmt(-- prints in yellow font and black background
   [[
   __import__('pdb').set_trace() ##DELETEME
 ]] , {}))
-
-cs(-- for([%w_]+) JS For Loop snippet{{{
-  { trig = 'ptrb ([%w_]+) ', regTrig = true },
-  fmt([[
-  print("{1} {2}:")
-  print({3})
-  print('\x1b[0m')
-  ]],
-    {
-      d(1, function()
-        return sn(1, t(emojis[math.random(#emojis)]))
-      end),
-      d(2, function(_, snip)
-        local v = snip.env
-        local ms = '  \\x1b[1;32;40m' .. v.TM_FILENAME .. ':' .. v.TM_LINE_NUMBER .. '\t' .. snip.captures[1]
-        return sn(1, t(ms))
-      end),
-      d(3, function(_, snip)
-        return sn(1, t(snip.captures[1]))
-      end),
-    }
-  )
-)
-
-cs(-- for([%w_]+) emoji.log{{{
-  { trig = "ptgre", regTrig = false },
-  fmt(
-    [[
+local print_fmt_str = [[
     print("""{1} {2}:""")
     print({3})
     print('\x1b[0m')
-    ]],
+    ]]
+
+
+cs(-- for([%w_]+) emoji.log{{{
+  { trig = "ptgre", regTrig = false },
+  fmt(print_fmt_str,
     {
       d(1, function()
         return sn(1, t(emojis[math.random(#emojis)]))
