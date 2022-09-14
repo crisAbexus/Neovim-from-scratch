@@ -98,6 +98,42 @@ cs(-- for([%w_]+) JS For Loop snippet{{{
   )
 )
 
+cs(-- for([%w_]+) emoji.log{{{
+  { trig = "ptgre", regTrig = false },
+  fmt(
+    [[
+    print("""{1} {2}:""")
+    print({3})
+    print('\x1b[0m')
+    ]],
+    {
+      d(1, function()
+        return sn(1, t(emojis[math.random(#emojis)]))
+      end),
+      d(2, function(_, snip)
+        local v = snip.env
+        local my_clipboard = vim.fn.getreg('"', 1, true)[1]
+        my_clipboard:gsub('%$', '')
+        if string.match(my_clipboard, "'") then
+          my_clipboard = my_clipboard:gsub("%'", '')
+        end
+        if string.match(my_clipboard, '"') then
+          my_clipboard = my_clipboard:gsub('%"', '')
+        end
+        if string.match(my_clipboard, '`') then
+          my_clipboard = my_clipboard:gsub('%`', '')
+        end
+        local ms = '  \\x1b[1;32;40m' .. v.TM_FILENAME .. ':' .. v.TM_LINE_NUMBER .. '\t'
+        ms = ms .. my_clipboard
+        return sn(1, t(ms))
+      end),
+      d(3, function()
+        local my_clipboard = vim.fn.getreg('"', 1, true)[1]
+        return sn(1, t(my_clipboard))
+      end),
+    }
+  )
+)
 -- End Refactoring --
 
 return snippets, autosnippets
