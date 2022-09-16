@@ -2,7 +2,7 @@
 	name = cris
 	email = ctovar@abexuspr.com
 [core]
-	editor = vim
+	editor = nvim
 	attributesFile = /home/tovar/.gitattributes
 [filter "DELETEME"]
 	clean = sed '/DELETEME/d'
