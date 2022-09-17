@@ -71,9 +71,9 @@ cs('pdb', fmt(-- prints in yellow font and black background
   __import__('pdb').set_trace() ##DELETEME
 ]] , {}))
 local print_fmt_str = [[
-    print("""{1} {2}:""")
-    print({3})
-    print('\x1b[0m')
+    print("""{1} {2}:""") ## DELETEME
+    print({3}) ## DELETEME
+    print('\x1b[0m') ## DELETEME
     ]]
 
 local black_red = "ptba_r"
