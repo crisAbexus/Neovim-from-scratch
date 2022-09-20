@@ -210,9 +210,8 @@ cs(-- for([%w_]+) emoji.log{{{
         local ms = "console.log(`" .. emojis[math.random(#emojis)] .. "  " ..
             v.TM_FILENAME .. ":" .. v.TM_LINE_NUMBER .. " " .. my_clipboard .. ": `"
             .. ", 'font-weight: bold; background:"
-            .. " #'+('000000' +"
-            .. " (Math.round(250-(50_000*((($TM_LINE_NUMBER+40.5)**(0.9))+6)**(-1.5))) * 0x10000 "
-            .. "+ (255-Math.round(250-(50_000*((($TM_LINE_NUMBER+40.5)**(0.9))+6)**(-1.5)))) * 0x100)"
+            .. " #'+('000000' +" .. " (Math.round(250-(50_000*(((".. v.TM_LINE_NUMBER .."+40.5)**(0.9))+6)**(-1.5))) * 0x10000 "
+            .. "+ (255-Math.round(250-(50_000*(((".. v.TM_LINE_NUMBER .."+40.5)**(0.9))+6)**(-1.5)))) * 0x100)"
             .. ".toString(16)).slice(-6)+'; color:#fff;'"
             .. "); //DELETEME"
         --[[ local sl = "console.log(" .. snip.captures[1] .. ");" ]]
