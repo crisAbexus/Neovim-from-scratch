@@ -4,6 +4,17 @@ local ls = require("luasnip") --{{{
 require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
 require("luasnip").config.setup({ store_selection_keys = "<A-p>" })
 
+-- javascript and react snippets
+ls.snippets = {
+  html = {}
+}
+ls.snippets.javascript = ls.snippets.html
+ls.snippets.javascriptreact = ls.snippets.html
+ls.snippets.typescriptreact = ls.snippets.html
+
+require("luasnip/loaders/from_vscode").load({include = {"html"}})
+require("luasnip/loaders/from_vscode").lazy_load()
+
 vim.cmd([[command! LuaSnipEdit :lua require("luasnip.loaders.from_lua").edit_snippet_files()]]) --}}}
 
 -- Virtual Text{{{
