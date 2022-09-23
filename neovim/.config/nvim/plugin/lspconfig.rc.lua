@@ -71,6 +71,3 @@ require('lspconfig')['pyright'].setup {
   flags = lsp_flags,
 }
 
-require('luasnip').filetype_extend("javascript", { "javascriptreact" })
-
-require('luasnip').filetype_extend("javascript", { "html" })
