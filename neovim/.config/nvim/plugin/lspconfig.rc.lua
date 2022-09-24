@@ -71,3 +71,8 @@ require('lspconfig')['pyright'].setup {
   flags = lsp_flags,
 }
 
+nvim_lsp.tsserver.setup {
+  cmd = { "typescript-language-server", "--stdio" },
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+  on_attach = on_attach,
+}
