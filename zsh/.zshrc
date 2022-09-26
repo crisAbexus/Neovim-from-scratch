@@ -21,6 +21,8 @@ alias forms="~/forms.tmux.ses"
 alias p18="~/p18.tmux.ses"
 alias bot="~/bot_Ax.tmux.ses"
 alias jupy="~/Documents/jupyter_notes/jupyter-init.sh"
+alias dotfiles="~/.dotfiles/setup.sh"
+alias V="/usr/bin/nvim"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
