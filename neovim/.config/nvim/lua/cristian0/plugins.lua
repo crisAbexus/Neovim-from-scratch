@@ -62,13 +62,15 @@ return packer.startup(function()
   --[[ use "L3MON4D3/LuaSnip" --snippet engine ]]
   use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" })
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-  use {'dsznajder/vscode-es7-javascript-react-snippets',
+  use { 'dsznajder/vscode-es7-javascript-react-snippets',
     run = 'yarn install --frozen-lockfile && yarn compile'
   }
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "williamboman/mason.nvim" -- tailwind helper
+  use "williamboman/mason-lspconfig.nvim"
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
