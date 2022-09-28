@@ -130,4 +130,9 @@ return packer.startup(function()
       's1n7ax/nvim-window-picker',
     },
   }
+  use {
+    "NTBBloodbath/rest.nvim",
+    requires = "nvim-lua/plenary.nvim",
+  }
+
 end)

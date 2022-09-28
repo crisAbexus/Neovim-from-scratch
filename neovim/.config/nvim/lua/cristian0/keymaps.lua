@@ -91,6 +91,9 @@ keymap("n", "ñ|", "<C-w>v", opts);
 keymap("n", "<leader>-", "<C-w>s", opts);
 keymap("n", "ñ0", "<cmd>noh<cr>", opts);
 
+-- REST API
+keymap("n", "¿rr", "<cmd>lua require('rest-nvim').run()<cr>", opts);
+
 -- luasnip
 local ls = require("luasnip")
 

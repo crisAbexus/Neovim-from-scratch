@@ -15,6 +15,7 @@ require "cristian0.neo_tree"
 require "cristian0.indent"
 require "cristian0.window-picker"
 require "cristian0.emojis"
+require "cristian0.rest"
 vim.o.background = "dark" -- or "light" for light mode
 
 
