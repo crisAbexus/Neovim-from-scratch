@@ -3,7 +3,7 @@ tmux kill-session -t survey_forms; cd ~/Documents/ABEXUS/docker-wrapper; tmux ha
  tmux new -s survey_forms -n docker -d
  tmux setenv COMPOSE_FILE survey_forms.yml
  tmux send-keys -t survey_forms 'git checkout Survey_forms' C-m
- tmux send-keys -t survey_forms 'export COMPOSE_FILE='survey_forms.yml' && docker-compose up -d && docker-compose logs -f' C-m
+ tmux send-keys -t survey_forms 'docker-compose up -d && docker-compose logs -f' C-m
  tmux split-window -v -t survey_forms
  tmux send-keys -t survey_forms "docker exec -it surv_db bash" C-m
  tmux split-window -h -t survey_forms
@@ -14,6 +14,11 @@ tmux kill-session -t survey_forms; cd ~/Documents/ABEXUS/docker-wrapper; tmux ha
  cd ~/Documents/ABEXUS/docker-wrapper/Survey_forms; 
  tmux send-keys -t survey_forms 'nvim .' C-m
  tmux splitw -f -t survey_forms -c "/home/tovar/Documents/ABEXUS/docker-wrapper/Survey_forms" -v -p 20
+
+ tmux new-window -n Pollster -c "/home/tovar/Documents/ABEXUS/docker-wrapper/Survey_forms/forms/Pollster" 
+ tmux splitw -v -c "/home/tovar/Documents/ABEXUS/docker-wrapper/Survey_forms/forms/Pollster"
+ tmux send-keys -t survey_forms 'npm run start ' C-m
+ tmux splitw -h -c "/home/tovar/Documents/ABEXUS/docker-wrapper/Survey_forms/forms/Pollster"
 
  tmux new-window -n DnD -c "/home/tovar/Documents/ABEXUS/docker-wrapper/Survey_forms/forms/DnD_forms_gen"
  tmux splitw -h -c "/home/tovar/Documents/ABEXUS/docker-wrapper/Survey_forms/forms/DnD_forms_gen"
