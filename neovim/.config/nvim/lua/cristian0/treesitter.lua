@@ -30,15 +30,15 @@ configs.setup {
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
     -- colors = {}, -- table of hex strings
     -- termcolors = {} -- table of colour name strings
-    colors = {
-      "#2E7F18",
-      "#00FFFF",
-      "#675E24",
-      "#FFC300",
-      "#800080",
-      "#FFC0CB",
-      "#C82538",
-    },
+    --[[ colors = { ]]
+    --[[   "#2E7F18", ]]
+    --[[   "#00FFFF", ]]
+    --[[   "#675E24", ]]
+    --[[   "#FFC300", ]]
+    --[[   "#800080", ]]
+    --[[   "#FFC0CB", ]]
+    --[[   "#C82538", ]]
+    --[[ }, ]]
     -- Term colors
     --[[ termcolors = { ]]
     -- Term colors here
