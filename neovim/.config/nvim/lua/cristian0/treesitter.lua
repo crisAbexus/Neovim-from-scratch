@@ -7,6 +7,9 @@ configs.setup {
   --ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = true, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing
+  autotag = {
+    enable = true,
+  },
   autopairs = {
     enable = true,
   },
@@ -38,13 +41,13 @@ configs.setup {
     },
     -- Term colors
     --[[ termcolors = { ]]
-      -- Term colors here
-      --[[ "#CC8888", ]]
-      --[[ "#CCCC88", ]]
-      --[[ "#88CC88", ]]
-      --[[ "#88CCCC", ]]
-      --[[ "#8888CC", ]]
-      --[[ "#CC88CC"  ]]
+    -- Term colors here
+    --[[ "#CC8888", ]]
+    --[[ "#CCCC88", ]]
+    --[[ "#88CC88", ]]
+    --[[ "#88CCCC", ]]
+    --[[ "#8888CC", ]]
+    --[[ "#CC88CC"  ]]
     --[[ } ]]
   }
 }
