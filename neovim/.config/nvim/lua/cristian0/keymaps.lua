@@ -95,6 +95,9 @@ keymap("n", "ñpwd", "<cmd>echo @%<cr>", opts);
 -- REST API
 keymap("n", "¿rr", "<cmd>lua require('rest-nvim').run()<cr>", opts);
 
+-- fugitive
+keymap("n", "¿bl", "<cmd>Git blame<cr>", opts);
+
 -- luasnip
 local ls = require("luasnip")
 

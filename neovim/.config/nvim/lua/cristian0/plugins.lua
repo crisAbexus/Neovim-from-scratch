@@ -94,6 +94,7 @@ return packer.startup(function()
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+  use 'tpope/vim-fugitive'
 
   -- install without yarn or npm
   use({
