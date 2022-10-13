@@ -14,7 +14,7 @@ local rep = require("luasnip.extras").rep
 local snippets, autosnippets = {}, {} --}}}
 
 local group = vim.api.nvim_create_augroup("Javascript Snippets", { clear = true })
-local file_pattern = { "*.js", "*.jsx" }
+local file_pattern = { "*.jsx", "*.js" }
 
 local function cs(trigger, nodes, opts) --{{{
   local snippet = s(trigger, nodes)
