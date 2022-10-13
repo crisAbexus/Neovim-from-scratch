@@ -47,9 +47,9 @@ git:
     signOff: false
   merging:
     # only applicable to unix users
-    manualCommit: false
+    manualCommit: true
     # extra args passed to `git merge`, e.g. --no-ff
-    args: ''
+    args: '-v'
   log:
     # one of date-order, author-date-order, topo-order.
     # topo-order makes it easier to read the git log graph, but commits may not
@@ -159,7 +159,7 @@ keybinding:
     commitChanges: 'c'
     commitChangesWithoutHook: 'w' # commit changes without pre-commit hook
     amendLastCommit: 'A'
-    commitChangesWithEditor: 'C'
+    commitChangesWithEditor: '¿'
     ignoreFile: 'i'
     refreshFiles: 'r'
     stashAllChanges: 's'
@@ -216,3 +216,8 @@ keybinding:
     init: 'i'
     update: 'u'
     bulkMenu: 'b'
+customCommands:
+  - key: 'C'
+    command: "git commit -v"
+    context: "global"
+    subprocess: true
