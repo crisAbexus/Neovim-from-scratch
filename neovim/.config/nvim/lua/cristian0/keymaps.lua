@@ -130,6 +130,10 @@ vim.keymap.set({ "i", "s" }, "<c-h>", function()
     ls.change_choice(-1)
   end
 end)
+
+keymap("i", "<a-l>", "<right>", opts);
+keymap("i", "<a-h>", "<left>", opts);
+
 keymap("i", "<C-a>", "<home>", opts);
 keymap("i", "<C-e>", "<end>", opts);
 
