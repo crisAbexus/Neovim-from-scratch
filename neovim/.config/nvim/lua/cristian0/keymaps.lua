@@ -125,11 +125,11 @@ vim.keymap.set({ "i", "s" }, "<c-l>", function()
   end
 end)
 
-vim.keymap.set({ "i", "s" }, "<c-h>", function()
-  if ls.choice_active() then
-    ls.change_choice(-1)
-  end
-end)
+--[[ vim.keymap.set({ "i", "s" }, "<c-h>", function() ]]
+--[[   if ls.choice_active() then ]]
+--[[     ls.change_choice(-1) ]]
+--[[   end ]]
+--[[ end) ]]
 
 keymap("i", "<a-l>", "<right>", opts);
 keymap("i", "<a-h>", "<left>", opts);
