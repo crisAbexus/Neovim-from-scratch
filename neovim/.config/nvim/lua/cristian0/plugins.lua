@@ -119,6 +119,17 @@ return packer.startup(function()
   -- require('dim').setup({})
   --end
   --}
+
+  use {
+    'salkin-mada/openscad.nvim',
+    config = function()
+      require('openscad')
+      -- load snippets, note requires
+      vim.g.openscad_load_snippets = true
+    end,
+    requires = 'L3MON4D3/LuaSnip'
+  }
+
   use "lukas-reineke/indent-blankline.nvim"
   use { 's1n7ax/nvim-window-picker', tag = "v1.*" }
   use {

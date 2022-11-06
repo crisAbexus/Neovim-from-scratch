@@ -38,6 +38,14 @@ local options = {
   guifont = "monospace:h17", -- the font used in graphical neovim applications
 }
 
+--openscad
+vim.g.openscad_fuzzy_finder = 'skim'
+vim.g.openscad_cheatsheet_window_blend = 15 --%
+vim.g.openscad_load_snippets = false
+-- should the openscad project automatically be opened on startup
+vim.g.openscad_auto_open = false
+vim.g.openscad_default_mappings = true
+
 vim.opt.shortmess:append "c"
 vim.g.neon_style = "dark"
 
