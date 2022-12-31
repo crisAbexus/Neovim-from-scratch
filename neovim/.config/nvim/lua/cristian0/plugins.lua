@@ -130,6 +130,9 @@ return packer.startup(function()
     requires = 'L3MON4D3/LuaSnip'
   }
 
+  -- packer.nvim
+  use 'lervag/vimtex'
+
   use "lukas-reineke/indent-blankline.nvim"
   use { 's1n7ax/nvim-window-picker', tag = "v1.*" }
   use {

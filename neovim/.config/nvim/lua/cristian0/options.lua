@@ -56,3 +56,15 @@ end
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+
+-- vimtex config
+vim.g.vimtex_view_method = "zathura"
+
+-- vim.g.goyo_height = 90
+
+--> LanguageTool configs
+-- vim.cmd([[
+--     autocmd User LanguageToolCheckDone LanguageToolSummary
+--     autocmd Filetype tex LanguageToolSetUp
+--     autocmd Filetype norg LanguageToolSetUp
+-- ]])
