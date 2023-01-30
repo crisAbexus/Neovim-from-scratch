@@ -12,4 +12,7 @@ tmux send-key -t nvim "nvim ." C-m;
 tmux new-window -n lazygit
 tmux send-key -t lazygit "lazygit" C-m;
 
+tmux new-window -n 6x6
+tmux send-key -t 6x6 "nvim ./keyboards/handwired/dactyl_manuform/6x6/" C-m;
+
 tmux attach -t qmk;
