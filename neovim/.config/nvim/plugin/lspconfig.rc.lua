@@ -28,6 +28,8 @@ local on_attach = function(client, bufnr)
   local bufopts = { noremap = true, silent = false, buffer = bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  --[[ vim.keymap.set('n', 'gdn', "<cmd>new <CR>| <cmd>normal `0<CR> | <cmd>lua vim.lsp.buf.definition()<CR>", bufopts) ]]
+  vim.keymap.set('n', 'ñgd', ":new<CR><C-o>:lua vim.lsp.buf.definition()<CR>", bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
@@ -45,47 +47,47 @@ local on_attach = function(client, bufnr)
 end
 
 nvim_lsp.sumneko_lua.setup {
-  on_attach = on_attach,
-  settings = {
-    Lua = {
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = { 'vim' },
-      },
+    on_attach = on_attach,
+    settings = {
+        Lua = {
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = { 'vim' },
+            },
 
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-        checkThirdParty = false
-      },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = vim.api.nvim_get_runtime_file("", true),
+                checkThirdParty = false
+            },
+        },
     },
-  },
 }
 
 local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
+    -- This is the default in Nvim 0.7+
+    debounce_text_changes = 150,
 }
 require('lspconfig')['pyright'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
+    on_attach = on_attach,
+    flags = lsp_flags,
 }
 
 nvim_lsp.tsserver.setup {
-  cmd = { "typescript-language-server", "--stdio" },
-  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
-  on_attach = on_attach,
+    cmd = { "typescript-language-server", "--stdio" },
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    on_attach = on_attach,
 }
 
 -- autotag
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics,
-  {
-    underline = true,
-    virtual_text = {
-      spacing = 5,
-      severity_limit = 'Warning'
-    },
-    update_in_insert = true,
-  }
-)
+        vim.lsp.diagnostic.on_publish_diagnostics,
+        {
+            underline = true,
+            virtual_text = {
+                spacing = 5,
+                severity_limit = 'Warning'
+            },
+            update_in_insert = true,
+        }
+    )
