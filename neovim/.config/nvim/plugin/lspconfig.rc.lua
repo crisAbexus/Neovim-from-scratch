@@ -47,47 +47,67 @@ local on_attach = function(client, bufnr)
 end
 
 nvim_lsp.sumneko_lua.setup {
-    on_attach = on_attach,
-    settings = {
-        Lua = {
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = { 'vim' },
-            },
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { 'vim' },
+      },
 
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
-                checkThirdParty = false
-            },
-        },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false
+      },
     },
+  },
 }
 
 local lsp_flags = {
-    -- This is the default in Nvim 0.7+
-    debounce_text_changes = 150,
+  -- This is the default in Nvim 0.7+
+  debounce_text_changes = 150,
 }
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+-- Code actions
+capabilities.textDocument.codeAction = {
+  dynamicRegistration = true,
+  codeActionLiteralSupport = {
+    codeActionKind = {
+      valueSet = (function()
+        local res = vim.tbl_values(vim.lsp.protocol.CodeActionKind)
+        table.sort(res)
+        return res
+      end)()
+    }
+  }
+}
+
+capabilities.textDocument.completion.completionItem.snippetSupport = true;
+
 require('lspconfig')['pyright'].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
 }
 
 nvim_lsp.tsserver.setup {
-    cmd = { "typescript-language-server", "--stdio" },
-    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
-    on_attach = on_attach,
+  cmd = { "typescript-language-server", "--stdio" },
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+  on_attach = on_attach,
 }
 
 -- autotag
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-        vim.lsp.diagnostic.on_publish_diagnostics,
-        {
-            underline = true,
-            virtual_text = {
-                spacing = 5,
-                severity_limit = 'Warning'
-            },
-            update_in_insert = true,
-        }
-    )
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
+    underline = true,
+    virtual_text = {
+      spacing = 5,
+      severity_limit = 'Warning'
+    },
+    update_in_insert = true,
+  }
+)

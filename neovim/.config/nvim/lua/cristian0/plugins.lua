@@ -145,9 +145,9 @@ return packer.startup(function()
       's1n7ax/nvim-window-picker',
     },
   }
+  use { 'thibthib18/mongo-nvim', rocks = { 'lua-mongo' } }
   use {
     "NTBBloodbath/rest.nvim",
     requires = "nvim-lua/plenary.nvim",
   }
-
 end)
