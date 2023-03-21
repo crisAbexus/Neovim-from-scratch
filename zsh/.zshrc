@@ -137,3 +137,4 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # set vim as default IDE
 export EDITOR=vim
+source ~/powerlevel10k/powerlevel10k.zsh-theme
