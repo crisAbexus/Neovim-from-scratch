@@ -1,15 +1,31 @@
 [user]
 	name = cris
 	email = ctovar@abexuspr.com
+
 [core]
 	editor = nvim
+	pager = delta
 	attributesFile = /home/tovar/.gitattributes
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+
 [filter "DELETEME"]
 	clean = sed '/DELETEME/d'
+
 [filter "csrf_exempt"]
 	clean = sed '/csrf_exempt/ s/^#*/#/'
+
 [alias]
 	superlog = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	better-blame = !sh ~/better-blame.sh
+
 [merge]
 	tool = nvimdiff
+	condlictstyle = diff3
+
+[diff]
+	colorMoved = default
