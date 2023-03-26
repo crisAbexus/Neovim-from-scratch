@@ -1,6 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/cris/.dotfiles
+- /home/cris/.local/share/nvim/lazy/LuaSnip
 - /home/cris/Documents/ABEXUS/abacus
 startuppopupversion: 5
 customcommandshistory: []

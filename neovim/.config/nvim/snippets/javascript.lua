@@ -99,7 +99,7 @@ local if_snippet = s(
     if_fmt_2,
   })
 ) --}}}
-local function_fmt = fmt(--{{{
+local function_fmt = fmt( --{{{
   [[
 function {}({}) {{
   {}
@@ -115,7 +115,7 @@ function {}({}) {{
 local function_snippet = s({ trig = "f[un]?", regTrig = true, hidden = true }, function_fmt)
 local function_snippet_func = s({ trig = "func" }, vim.deepcopy(function_fmt)) --}}}
 
-local short_hand_if_fmt = fmt(--{{{
+local short_hand_if_fmt = fmt( --{{{
   [[
 if ({}) {}
 {}
@@ -147,7 +147,7 @@ table.insert(snippets, function_snippet_func)
 
 -- snippets strats here--
 
-cs(-- for([%w_]+) JS For Loop snippet{{{
+cs( -- for([%w_]+) JS For Loop snippet{{{
   { trig = "for([%w_]+)", regTrig = true, hidden = true },
   fmt(
     [[
@@ -169,14 +169,14 @@ for (let {} = 0; {} < {}; {}++) {{
     }
   )
 ) --}}}
-cs(-- [while] JS While Loop snippet{{{
+cs( -- [while] JS While Loop snippet{{{
   "while",
   fmt(
     [[
 while ({}) {{
   {}
 }}
-  ]] ,
+  ]],
     {
       i(1, ""),
       i(2, "// TODO:"),
@@ -186,7 +186,7 @@ while ({}) {{
 
 --console.log(`%c $TM_FILENAME:$TM_LINE_NUMBER - $CLIPBOARD`, 'font-weight: bold; background: #'+('000000' + (Math.round(250-(50_000*((($TM_LINE_NUMBER+40.5)**(0.9))+6)**(-1.5))) * 0x10000 + (255-Math.round(250-(50_000*((($TM_LINE_NUMBER+40.5)**(0.9))+6)**(-1.5)))) * 0x100).toString(16)).slice(-6)+'; color:#fff;')// DELETEME\n
 
-cs(-- for([%w_]+) emoji.log{{{
+cs( -- for([%w_]+) emoji.log{{{
   { trig = "cng", regTrig = false },
   fmt(
     [[
@@ -196,33 +196,40 @@ cs(-- for([%w_]+) emoji.log{{{
     {
       d(1, function(_, snip)
         local v = snip.env
-        local my_clipboard = vim.fn.getreg('"', 1, true)[1]
-        my_clipboard:gsub('%$', '')
+        local my_clipboard = vim.fn.getreg:bool('"', 1, true)[1]
+        my_clipboard:gsub("%$", "")
         if string.match(my_clipboard, "'") then
-          my_clipboard = my_clipboard:gsub("%'", '')
+          my_clipboard = my_clipboard:gsub("%'", "")
         end
         if string.match(my_clipboard, '"') then
-          my_clipboard = my_clipboard:gsub('%"', '')
+          my_clipboard = my_clipboard:gsub('%"', "")
         end
-        if string.match(my_clipboard, '`') then
-          my_clipboard = my_clipboard:gsub('%`', '')
+        if string.match(my_clipboard, "`") then
+          my_clipboard = my_clipboard:gsub("%`", "")
         end
         local line_number_code = math.floor(250 - 50000 * ((v.TM_LINE_NUMBER + 40.5) ^ 0.9 + 6) ^ -1.5) * 0x10000
         line_number_code = line_number_code * 255
-        line_number_code = string.format("%x", line_number_code)
-        line_number_code = '#' .. string.sub(line_number_code, 1, 6)
-        local ms = "console.log(`" .. Emojis[math.random(#Emojis)] .. "%c" ..
-            v.TM_FILENAME .. ":" .. v.TM_LINE_NUMBER .. " - " .. my_clipboard .. "`"
-            .. ",'font-weight:bold; background:" ..
-            line_number_code
-            .. ";color:#fff;'"
-            .. "); //DELETEME"
+        local line_number_code_str = string.format("%x", line_number_code)
+        line_number_code_str = "#" .. string.sub(line_number_code_str, 1, 6)
+        local ms = "console.log(`"
+          .. Emojis[math.random(#Emojis)]
+          .. "%c"
+          .. v.TM_FILENAME
+          .. ":"
+          .. v.TM_LINE_NUMBER
+          .. " - "
+          .. my_clipboard
+          .. "`"
+          .. ",'font-weight:bold; background:"
+          .. line_number_code
+          .. ";color:#fff;'"
+          .. "); //DELETEME"
         --[[ local sl = "console.log(" .. snip.captures[1] .. ");" ]]
 
         return sn(1, t(ms))
       end),
       d(2, function()
-        local my_clipboard = vim.fn.getreg('"', 1, true)[1]
+        local my_clipboard = vim.fn.getreg:bool('"', 1, true)[1]
         local sl = "console.log(" .. my_clipboard .. "); // DELETEME"
         return sn(1, t(sl))
       end),
