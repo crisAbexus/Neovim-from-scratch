@@ -2,6 +2,8 @@
 # modified 2021-06-28
 #
 
+import:
+  - ~/.config/alacritty/themes/themes/argonaut.yaml
 env:
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
@@ -17,7 +19,7 @@ window:
   # Remove buttons
   #decorations: none
   # Open in full screen 
-  startup_mode: Fullscreen
+  # startup_mode: Fullscreen
   # Dimensions if not SimpleFullscreen
   dimensions:
     columns: 140
@@ -34,13 +36,13 @@ cursor:
 
 font:
   normal:
-    family: Hack Nerd Font Mono
+    family: "JetBrains Mono medium"
     style: Regular
   bold:
-    family: Hack Nerd Font Mono
+    family: "JetBrains Mono Semibold"
     style: Bold
   italic:
-    family: Hack Nerd Font Mono
+    family: "JetBrains Mono Thin"
     style: Italic
   size: 10
 
@@ -50,9 +52,9 @@ font:
 # Colors (Hyper)
 colors:
   # Default colors
-  primary:
-    background: '#000000'
-    foreground: '#ffffff'
+  # primary:
+  #   background: '#000000'
+  #   foreground: '#ffffff'
   cursor:
     text: '#F81CE5'
     cursor: '#ffffff'
