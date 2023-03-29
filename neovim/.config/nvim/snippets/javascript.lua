@@ -196,7 +196,7 @@ cs( -- for([%w_]+) emoji.log{{{
     {
       d(1, function(_, snip)
         local v = snip.env
-        local my_clipboard = vim.fn.getreg:bool('"', 1, true)[1]
+        local my_clipboard = vim.fn.getreg('"', 1, true)[1]
         my_clipboard:gsub("%$", "")
         if string.match(my_clipboard, "'") then
           my_clipboard = my_clipboard:gsub("%'", "")
@@ -229,7 +229,7 @@ cs( -- for([%w_]+) emoji.log{{{
         return sn(1, t(ms))
       end),
       d(2, function()
-        local my_clipboard = vim.fn.getreg:bool('"', 1, true)[1]
+        local my_clipboard = vim.fn.getreg('"', 1, true)[1]
         local sl = "console.log(" .. my_clipboard .. "); // DELETEME"
         return sn(1, t(sl))
       end),

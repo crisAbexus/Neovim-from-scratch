@@ -165,7 +165,7 @@ function TAble_of_nodes(trig)
     end),
     d(2, function(_, snip)
       local v = snip.env
-      local my_clipboard = vim.fn.getreg:bool('"', 1, true)[1]
+      local my_clipboard = vim.fn.getreg('"', 1, true)[1]
       my_clipboard:gsub("%$", "")
       if string.match(my_clipboard, "'") then
         my_clipboard = my_clipboard:gsub("%'", "")
@@ -181,7 +181,7 @@ function TAble_of_nodes(trig)
       return sn(1, t(ms))
     end),
     d(3, function()
-      local my_clipboard = vim.fn.getreg:bool('"', 1, true)[1]
+      local my_clipboard = vim.fn.getreg('"', 1, true)[1]
       return sn(1, t(my_clipboard))
     end),
   }
