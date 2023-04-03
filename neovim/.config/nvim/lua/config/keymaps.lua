@@ -13,6 +13,10 @@ vim.keymap.set("n", "<leader>ft", function()
   Util.float_term(nil, { cwd = Util.get_root(), border = "single" })
 end, { noremap = true, silent = true, desc = "Resume" })
 
+vim.keymap.set("n", "<leader>gg", function()
+  Util.float_term({ "lazygit" }, { cwd = Util.get_root(), border = "double" })
+end, { noremap = true, silent = true, desc = "Resume" })
+
 local status_ok, rest = pcall(require, "rest-nvim")
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "http",
