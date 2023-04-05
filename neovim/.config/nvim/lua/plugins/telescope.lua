@@ -5,6 +5,7 @@ return {
   cmd = "Telescope",
   version = false, -- telescope did only one release, so use HEAD for now
   keys = {
-    { "<leader><space>", Util.telescope("files"), desc = "Find Files (root dir)" },
+    { "<leader><space>", Util.telescope("files", { cwd = false }), desc = "Find Files (root dir)" },
+    { "<leader>/", Util.telescope("live_grep", { cwd = false }), desc = "Find Files (root dir)" },
   },
 }
