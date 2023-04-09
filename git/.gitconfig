@@ -3,7 +3,7 @@
 	email = ctovar@abexuspr.com
 
 [core]
-	editor = nvim
+	editor = NVIM_APPNAME=LazyVim nvim
 	pager = delta
 	attributesFile = /home/tovar/.gitattributes
 
