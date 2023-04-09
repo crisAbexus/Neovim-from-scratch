@@ -26,9 +26,27 @@ alias jupy="~/Documents/jupyter_notes/jupyter-init.sh"
 alias dotfiles="~/.dotfiles/setup.sh"
 alias V="/usr/bin/nvim"
 
+alias lvim="NVIM_APPNAME=LazyVim nvim"
+alias kvim="NVIM_APPNAME=kickstart nvim"
+alias chvim="NVIM_APPNAME=NvChad nvim"
+alias avim="NVIM_APPNAME=AstroNvim nvim"
+
+function nvims(){
+  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt="Neovim Config >>" --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0 
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi 
+  NVIM_APPNAME=$config nvim $@
+}
+
+bindkey -s ^a "nvims\n"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export lvim="$HOME/.local/bin/lvim"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
