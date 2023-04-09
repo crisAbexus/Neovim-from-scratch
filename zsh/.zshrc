@@ -30,9 +30,10 @@ alias lvim="NVIM_APPNAME=LazyVim nvim"
 alias kvim="NVIM_APPNAME=kickstart nvim"
 alias chvim="NVIM_APPNAME=NvChad nvim"
 alias avim="NVIM_APPNAME=AstroNvim nvim"
+alias ovim="NVIM_APPNAME=packervim nvim"
 
 function nvims(){
-  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
+  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim" "packervim")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt="Neovim Config >>" --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"

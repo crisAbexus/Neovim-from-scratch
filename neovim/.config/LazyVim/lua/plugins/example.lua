@@ -168,8 +168,8 @@ return {
     opts = function(_, opts)
       -- add tsx and treesitter
       vim.list_extend(opts.ensure_installed, {
-          "tsx",
-          "typescript",
+        "tsx",
+        "typescript",
       })
     end,
   },
@@ -218,6 +218,7 @@ return {
   {
     "L3MON4D3/LuaSnip",
     keys = function()
+      require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
       return {}
     end,
   },
