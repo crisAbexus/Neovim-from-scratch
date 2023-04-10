@@ -23,7 +23,7 @@ alias abacus="~/abacus.tmux.ses"
 alias p18="~/p18.tmux.ses"
 alias bot="~/bot_Ax.tmux.ses"
 alias jupy="~/Documents/jupyter_notes/jupyter-init.sh"
-alias dotfiles="~/.dotfiles/setup.sh"
+alias dotfiles="~/dotfiles.tmux.ses"
 alias V="/usr/bin/nvim"
 
 alias lvim="NVIM_APPNAME=LazyVim nvim"
