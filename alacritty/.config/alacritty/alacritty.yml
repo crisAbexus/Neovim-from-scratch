@@ -36,13 +36,13 @@ cursor:
 
 font:
   normal:
-    family: "JetBrains Mono medium"
+    family: "JetBrainsMono Nerd Font"
     style: Regular
   bold:
-    family: "JetBrains Mono Semibold"
+    family: "Hack Nerd Font"
     style: Bold
   italic:
-    family: "JetBrains Mono Thin"
+    family: "Nimbus Mono PS"
     style: Italic
   size: 10
 
