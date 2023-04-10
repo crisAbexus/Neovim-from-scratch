@@ -14,7 +14,7 @@ configs.setup({
     "perl", 
     "json", 
     "html", 
-    "help", 
+    "vimdoc", 
     "haskell", 
     "gitignore", 
     "bibtex" 
