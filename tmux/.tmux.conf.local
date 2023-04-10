@@ -184,12 +184,12 @@ tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{tasks_status}
 
 # status left style
 tmux_conf_theme_status_left_fg='#282a36,#f8f8f2,#e4e4e4'  # black, white , white
-tmux_conf_theme_status_left_bg='#ff79c6,#6272a4,#00afff'  # yellow, pink, white blue
+tmux_conf_theme_status_left_bg='#7AA2f7,#6272a4,#00afff'  # yellow, pink, white blue
 tmux_conf_theme_status_left_attr='bold,none,none'
 
 # status right style
 tmux_conf_theme_status_right_fg='#f8f8f2,#f8f8f2,#282a36' # light gray, white, black
-tmux_conf_theme_status_right_bg='#44475a,#6272a4,#bd93f9' # dark gray, red, white
+tmux_conf_theme_status_right_bg='#44475a,#6272a4,#4ADEDE' # dark gray, red, white
 tmux_conf_theme_status_right_attr='none,none,bold'
 
 # pairing indicator
@@ -206,7 +206,7 @@ tmux_conf_theme_prefix_attr='none'
 
 # root indicator
 tmux_conf_theme_root='!'
-tmux_conf_theme_root_fg='none'
+tmux_conf_theme_root_fg='red'
 tmux_conf_theme_root_bg='none'
 tmux_conf_theme_root_attr='bold,blink'
 
