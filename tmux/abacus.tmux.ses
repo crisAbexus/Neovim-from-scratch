@@ -22,13 +22,13 @@ tmux split-pane -h -t $window11.2
 tmux split-pane -t $session1:1.1 'docker attach abacus_dj'
 
 tmux new-window -n $window13 -c "$PWD"
-tmux send-keys -t $window13 'nvim .' C-m
+tmux send-keys -t $window13 'lvim .' C-m
 
 # session 2
 tmux new -s $session2 -n $window21 -d
 tmux send-keys -t $window21 'lazygit' C-m
 
 tmux new-window -n $window13 -c "$PWD"
-tmux send-keys -t $window13 'nvim .' C-m
+tmux send-keys -t $window13 'lvim .' C-m
 
 tmux attach -t $session1:1
