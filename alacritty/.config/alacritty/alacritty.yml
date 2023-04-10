@@ -44,7 +44,7 @@ font:
   italic:
     family: "Nimbus Mono PS"
     style: Italic
-  size: 10
+  size: 12
 
   # Better font rendering for mac
   # use_thin_strokes: true
