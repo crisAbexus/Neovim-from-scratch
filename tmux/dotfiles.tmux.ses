@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # reldir="$(dirname -- "$0")"
-reldir="~/.dotfiles"
+reldir="$HOME/.dotfiles/"
 cd "$reldir"
 directory="$(pwd)"
 
