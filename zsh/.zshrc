@@ -32,10 +32,12 @@ alias chvim="NVIM_APPNAME=NvChad nvim"
 alias avim="NVIM_APPNAME=AstroNvim nvim"
 alias ovim="NVIM_APPNAME=packervim nvim"
 alias tvim="NVIM_APPNAME=tuffgniuz nvim"
-alias texvim="NVIM_APPNAME=ejmastnak nvim"
+alias texvim="NVIM_APPNAME=benbrastmckie nvim"
+alias ejvim="NVIM_APPNAME=ejmastnak nvim"
+alias vimtex="vim"
 
 function nvims(){
-  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim" "packervim" "tuffgniuz" "ejmastnak")
+  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim" "packervim" "tuffgniuz" "benbrastmckie" "ejmastnak")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt="Neovim Config >>" --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
@@ -160,6 +162,7 @@ source ~/.dotfiles/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # set vim as default IDE
 export EDITOR=vim
+export XDG_CONFIG_HOME="$HOME"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 export NVM_DIR="$HOME/.nvm"
