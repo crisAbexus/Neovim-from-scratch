@@ -1,3 +1,4 @@
 local ls = require("luasnip")
 
-require("luasnip.loaders.from_snipmate").load({ paths = "~/.config/nvim/snippets/" })
+require("luasnip.loaders.from_snipmate").load({ paths = "~/.config/benbrastmckie/snippets/" })
+require("luasnip.loaders.from_lua").load({ paths = "~/.config/ejmastnak/LuaSnip/" })
