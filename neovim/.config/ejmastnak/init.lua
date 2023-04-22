@@ -43,7 +43,7 @@ end
 -- --------------------------------------------- --
 local Plug = vim.fn["plug#"]
 
-vim.call("plug#begin", "~/.config/ejmastnak/plugged")
+vim.call("plug#begin", "~/.config/benbrastmckie/plugged")
 
 Plug("junegunn/vim-plug")
 Plug("shaunsingh/nord.nvim")
@@ -85,8 +85,8 @@ Plug("nvim-treesitter/nvim-treesitter-textobjects")
 Plug("nvim-treesitter/playground")
 
 -- Local plugins
-Plug("~/.config/nvim/personal/vim-mpv")
-Plug("~/.config/nvim/personal/vim-beanquery")
+Plug("~/.config/benbrastmckie/personal/vim-mpv")
+Plug("~/.config/benbrastmckie/personal/vim-beanquery")
 
 vim.call("plug#end")
 -- --------------------------------------------- --
@@ -161,7 +161,7 @@ vim.keymap.set("n", "<Leader>s", ":%s/")
 vim.keymap.set("v", "<Leader>s", ":s/")
 
 -- Set swap file directory to within Vim directory
-vim.opt.directory:prepend(os.getenv("HOME") .. "/.config/nvim/swap//")
+vim.opt.directory:prepend(os.getenv("HOME") .. "/.config/benbrastmckie/swap//")
 
 -- Use escape to return to normal mode in a Neovim terminal
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")

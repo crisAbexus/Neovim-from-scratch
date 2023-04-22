@@ -1,59 +1,53 @@
 -- GENERAL
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.autocommands"
-require "user.colorscheme"
+require("user.options")
+require("user.keymaps")
+require("user.plugins")
+require("user.autocommands")
+require("user.colorscheme")
 
 -- PLUGINS
 
-require "user.autopairs"
-require "user.comment"
-require "user.impatient"
-require "user.surround"
-require "user.yanky"
-require "user.undotree"
+require("user.autopairs")
+require("user.comment")
+require("user.impatient")
+require("user.surround")
+require("user.undotree")
 
 -- Mappings
-require "user.whichkey"
+require("user.whichkey")
 
 -- Terminal
-require "user.toggleterm"
+require("user.toggleterm")
 
 -- File Management
-require "user.nvim-tree"
-require "user.sessions"
+require("user.nvim-tree")
+require("user.sessions")
 
 -- Appearance
-require "user.bufferline"
-require "user.lualine"
-require "user.indentline"
-require "user.alpha"
-require "user.illuminate"
+require("user.lualine")
+require("user.indentline")
+require("user.alpha")
+require("user.illuminate")
+require("user.bufferline")
 
 -- Autocomplete
-require "user.cmp"
+require("user.cmp")
 
 -- LaTeX
-require "user.vimtex"
+require("user.vimtex")
 
 -- Markdown
-require "user.autolist"
+require("user.autolist")
 
 -- Snippets
-require "user.luasnip"
+require("user.luasnip")
 
 -- Telescope
-require "user.telescope"
-require "user.dressing"
+require("user.telescope")
+require("user.dressing")
 
 -- Treesitter
-require "user.treesitter"
+require("user.treesitter")
 
 -- Git
-require "user.gitsigns"
-
-
-
-
-
+require("user.gitsigns")
