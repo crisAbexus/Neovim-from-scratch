@@ -162,7 +162,6 @@ source ~/.dotfiles/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # set vim as default IDE
 export EDITOR=vim
-export XDG_CONFIG_HOME="$HOME"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 export NVM_DIR="$HOME/.nvm"
