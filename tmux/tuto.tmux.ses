@@ -22,16 +22,16 @@ tmux send-keys -t $window11 'docker-compose up -d && docker-compose logs -f' C-m
 # tmux split-pane -t $session1:1.1 'docker attach abacus_dj'
 
 tmux new-window -n $window12
-tmux send-keys -t $window12 'texvim .' C-m
+tmux send-keys -t $window12 'vimtex .' C-m
 
 tmux new-window -n $window13
-tmux send-keys -t $window13 'texvim .' C-m
+tmux send-keys -t $window13 'vimtex .' C-m
 
 # session 2
 tmux new -s $session2 -n $window21 -d
 tmux send-keys -t $window21
 
 tmux new-window -n $window13
-tmux send-keys -t $window13 'texvim .' C-m
+tmux send-keys -t $window13 'vimtex .' C-m
 
 tmux attach -t $session1:1
