@@ -9,6 +9,20 @@
 -- vim.keymap.set("n", "<leader>ft", term_borders, {})
 
 local Util = require("lazyvim.util")
+
+local function map(mode, lhs, rhs, opts)
+  local keys = require("lazy.core.handler").handlers.keys
+  ---@cast keys LazyKeysHandler
+  -- do not create the keymap if a lazy keys handler exists
+  if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+    opts = opts or {}
+    opts.silent = opts.silent ~= false
+    vim.keymap.set(mode, lhs, rhs, opts)
+  end
+end
+
+map("n", "<leader>pdb", "<cmd>TodoTelescope keywords=DELETEME<cr>", { desc = "Increase window height" })
+
 vim.keymap.set("n", "<leader>ft", function()
   Util.float_term(nil, { cwd = Util.get_root(), border = "single" })
 end, { noremap = true, silent = true, desc = "Resume" })
