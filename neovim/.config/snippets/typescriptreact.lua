@@ -235,15 +235,65 @@ cs( -- for([%w_]+) emoji.log{{{
 		}
 	)
 )
+
 cs(
-	"pdb",
+	{ trig = "efus", regTrig = false },
 	fmt(
 		[[
-  __import__('pdb').set_trace() ##DELETEME:
-]],
-		{}
+    useEffect(() => {{
+      {1}
+      {2}
+    }},[{3}])
+    ]],
+		{
+			d(1, function(_, snip)
+				local v = snip.env
+				local my_clipboard = vim.fn.getreg('"', 1, true)[1] -- type:ignore
+				my_clipboard:gsub("%$", "")
+				if string.match(my_clipboard, "'") then
+					my_clipboard = my_clipboard:gsub("%'", "")
+				end
+				if string.match(my_clipboard, '"') then
+					my_clipboard = my_clipboard:gsub('%"', "")
+				end
+				if string.match(my_clipboard, "`") then
+					my_clipboard = my_clipboard:gsub("%`", "")
+				end
+				local line_number_code = math.floor(250 - 50000 * ((v.TM_LINE_NUMBER + 40.5) ^ 0.9 + 6) ^ -1.5)
+					* 0x10000
+				line_number_code = line_number_code * 255
+				local line_number_code_str = string.format("%x", line_number_code)
+				line_number_code_str = "#" .. string.sub(line_number_code_str, 1, 6)
+				local ms = "console.log(`"
+					.. Emojis[math.random(#Emojis)]
+					.. "%c"
+					.. v.TM_FILENAME
+					.. ":"
+					.. v.TM_LINE_NUMBER
+					.. " - "
+					.. my_clipboard
+					.. "`"
+					.. ",'font-weight:bold; background:"
+					.. line_number_code_str
+					.. ";color:#fff;'"
+					.. "); //DELETEME:"
+				--[[ local sl = "console.log(" .. snip.captures[1] .. ");" ]]
+
+				return sn(1, t(ms))
+			end),
+			d(2, function()
+				local my_clipboard = vim.fn.getreg('"', 1, true)[1]
+				local sl = "console.log(" .. my_clipboard .. "); // DELETEME:"
+				return sn(1, t(sl))
+			end),
+			d(3, function()
+				local my_clipboard = vim.fn.getreg('"', 1, true)[1]
+				return sn(1, t(my_clipboard))
+			end),
+		}
 	)
 )
+
 cs(
 	"debug",
 	fmt(
