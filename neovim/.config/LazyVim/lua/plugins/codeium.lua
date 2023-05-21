@@ -1,9 +1,22 @@
 return {
   "Exafunction/codeium.vim",
   config = function()
-    -- Change '<C-g>' here to any keycode you like.
+    -- Chang<c-g>e '<C-g>' here to any keycode you like.
     -- vim.g.codeium_no_map_tab = true
-    vim.keymap.set("i", "¿", function()
+    --
+    --- execute at the en end of the file only
+    --     vim.keymap.set("i", "<right>", function()
+    --   local col = vim.fn.col('.')
+    --   local line_len = vim.fn.col('$')
+    --   if col == line_len then
+    --     return vim.fn["codeium#Accept"]()
+    --   else
+    --     return vim.fn["<right>"]()
+    --   end
+    -- end, { expr = true })
+    --- execute at the en end of the file only
+
+    vim.keymap.set("i", "<right>", function()
       return vim.fn["codeium#Accept"]()
     end, { expr = true })
     vim.keymap.set("i", "<c-;>", function()
