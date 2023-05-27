@@ -24,6 +24,7 @@ alias p18="~/p18.tmux.ses"
 alias bot="~/bot_Ax.tmux.ses"
 alias jupy="~/Documents/jupyter_notes/jupyter-init.sh"
 alias dotfiles="~/dotfiles.tmux.ses"
+alias keyboard="~/qmk.tmux.ses"
 alias V="/usr/bin/nvim"
 
 alias lvim="NVIM_APPNAME=LazyVim nvim"
@@ -57,6 +58,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
+# DELETEME: 
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
